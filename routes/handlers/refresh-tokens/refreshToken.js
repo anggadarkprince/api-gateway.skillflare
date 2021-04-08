@@ -22,7 +22,7 @@ module.exports = async (req, res) => {
             });
         }
 
-        await api.get('/refresh_tokens', {params: {refresh_token: refreshToken}});
+        await api.get('/refresh-tokens', {params: {refresh_token: refreshToken}});
 
         jwt.verify(refreshToken, JWT_SECRET_REFRESH_TOKEN, (err, decoded) => {
             if (err) {

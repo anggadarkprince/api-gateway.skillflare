@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 
-const refreshTokensHandler = require('./handler/refresh-tokens');
+const refreshTokensHandler = require('./handlers/refresh-tokens');
 
 router.post('/', refreshTokensHandler.refreshToken)
 

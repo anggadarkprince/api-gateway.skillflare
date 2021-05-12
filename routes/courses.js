@@ -4,6 +4,7 @@ const courseHandler = require('./handlers/courses')
 const chapterHandler = require('./handlers/chapters')
 const lessonHandler = require('./handlers/lessons')
 const imageHandler = require('./handlers/course-images')
+const reviewHandler = require('./handlers/reviews')
 
 router.post('/', courseHandler.create);
 router.get('/', courseHandler.getAll);
@@ -27,5 +28,11 @@ router.post('/:courseId/images', imageHandler.create);
 router.get('/:courseId/images', imageHandler.getAll);
 router.get('/:courseId/images/:id', imageHandler.getOne);
 router.delete('/:courseId/images/:id', imageHandler.destroy);
+
+router.post('/:courseId/reviews', reviewHandler.create);
+router.get('/:courseId/reviews', reviewHandler.getAll);
+router.get('/:courseId/reviews/:id', reviewHandler.getOne);
+router.put('/:courseId/reviews/:id', reviewHandler.update);
+router.delete('/:courseId/reviews/:id', reviewHandler.destroy);
 
 module.exports = router;

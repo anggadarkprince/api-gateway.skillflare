@@ -7,7 +7,7 @@ module.exports = async (req, res) => {
   try {
     const courseId = req.params.courseId;
     const id = req.params.id;
-    const lesson = await api.put(`/api/courses/${courseId}/lessons/${id}`, req.body);
+    const lesson = await api.get(`/api/courses/${courseId}/reviews/${id}`);
     return res.json(lesson.data);
   } catch (error) {
     if (error.code === 'ECONNREFUSED') {

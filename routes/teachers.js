@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const courseHandler = require('./handlers/teachers')
+const teacherHandler = require('./handlers/teachers')
 
-router.post('/', courseHandler.create);
-router.get('/', courseHandler.getAll);
-router.get('/:id', courseHandler.getTeacher);
-router.put('/:id', courseHandler.update);
-router.delete('/:id', courseHandler.destroy);
+router.post('/', teacherHandler.create);
+router.get('/', teacherHandler.getAll);
+router.get('/:id', teacherHandler.getTeacher);
+router.put('/:id', teacherHandler.update);
+router.delete('/:id', teacherHandler.destroy);
 
 module.exports = router;

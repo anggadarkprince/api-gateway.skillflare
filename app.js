@@ -12,6 +12,7 @@ const teachersRouter = require('./routes/teachers');
 const mediaRouter = require('./routes/media');
 const ordersRouter = require('./routes/orders');
 const paymentsRouter = require('./routes/payments');
+const verifyToken = require('./middlewares/verifyToken');
 
 const app = express();
 
@@ -24,8 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/refresh-tokens', refreshTokenRouter);
-app.use('/teachers', teachersRouter);
-app.use('/courses', coursesRouter);
+app.use('/teachers', verifyToken, teachersRouter);
+app.use('/courses', verifyToken, coursesRouter);
 app.use('/media', mediaRouter);
 app.use('/orders', ordersRouter);
 app.use('/payments', paymentsRouter);

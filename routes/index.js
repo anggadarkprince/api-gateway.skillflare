@@ -1,8 +1,12 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  return res.status(200).json({
+    app: process.env.APP_NAME || 'Skillflare API Gateway',
+    code: 'api-gateway.skillflare',
+    version: 'v1.0',
+  });
 });
 
 module.exports = router;

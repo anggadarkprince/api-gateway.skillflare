@@ -11,7 +11,6 @@ const coursesRouter = require('./routes/courses');
 const teachersRouter = require('./routes/teachers');
 const mediaRouter = require('./routes/media');
 const ordersRouter = require('./routes/orders');
-const paymentsRouter = require('./routes/payments');
 const myCoursesRouter = require('./routes/myCourses');
 const webhookRouter = require('./routes/webhook');
 const verifyToken = require('./middlewares/verifyToken');
